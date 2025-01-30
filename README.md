@@ -12,5 +12,6 @@ npm install function-al
 
 | Function                                 | Description                                                       |
 | ---------------------------------------- | ----------------------------------------------------------------- |
+| [identity](./src/identity/README.md)     | Simply returns its input as-is                                    |
 | [spreadArgs](./src/spreadArgs/README.md) | Converts an array of arguments into separate function parameters. |
 | [gatherArgs](./src/gatherArgs/README.md) | Transforms multiple arguments into an array                       |
