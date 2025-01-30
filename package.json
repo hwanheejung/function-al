@@ -1,0 +1,42 @@
+{
+  "name": "function-al",
+  "version": "1.0.0",
+  "description": "lightweight functional programming library",
+  "type": "module",
+  "main": "dist/function-al.cjs.js",
+  "module": "dist/function-al.esm.js",
+  "types": "dist/function-al.d.ts",
+  "exports": {
+    "import": "./dist/function-al.esm.js",
+    "require": "./dist/function-al.cjs.js"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "test": "vitest"
+  },
+  "keywords": [
+    "functional",
+    "fp",
+    "functional-programming",
+    "utils",
+    "javascript",
+    "typescript"
+  ],
+  "author": "hwanheejung",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hwanheejung/function-al.git"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/jest": "^29.5.14",
+    "rollup": "^4.32.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.4"
+  }
+}

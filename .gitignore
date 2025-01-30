@@ -1,0 +1,19 @@
+# Node.js 관련
+node_modules/
+package-lock.json
+
+# 빌드 결과물
+dist/
+
+# TypeScript
+*.tsbuildinfo
+
+# Rollup 캐시
+.rpt2_cache/
+.rollup.cache
+
+# 테스트 관련 (Vitest)
+coverage/
+.vitest/
+*.log
+
