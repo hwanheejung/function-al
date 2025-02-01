@@ -1,8 +1,14 @@
 {
-  "name": "function-al",
+  "name": "@zoey_utils/function-al",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.0",
-  "description": "lightweight functional programming library",
+  "description": "A type-safe utility library for functional programming",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "main": "dist/function-al.cjs.js",
   "module": "dist/function-al.esm.js",
   "types": "dist/function-al.d.ts",

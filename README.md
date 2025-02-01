@@ -7,7 +7,7 @@
 ## 📌 Installation
 
 ```sh
-npm install function-al
+npm i @zoey_utils/function-al
 ```
 
 <br>

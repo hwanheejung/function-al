@@ -82,7 +82,10 @@ export function curry<Fn extends AnyFunc>(
     return isComplete
       ? fn(...(args as Parameters<Fn>))
       : (...nextArgs: PartialTuple<Parameters<Fn>>) => {
-          const combinedArgs = [...args, ...nextArgs] as ArgsType<Fn>;
+          const combinedArgs = [
+            ...args,
+            ...nextArgs,
+          ] as unknown as ArgsType<Fn>;
           return curried(...combinedArgs);
         };
   };
