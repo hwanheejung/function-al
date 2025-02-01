@@ -12,6 +12,12 @@ describe("curry function", () => {
     expect(curriedAdd(1, 2, 3)).toBe(6);
 
     // ❌ Invalid calls: Intentionally incorrect to test TypeScript errors
+    // @ts-expect-error
+    curriedAdd(1)("a")(3);
+    // @ts-expect-error
+    curriedAdd(1, "a")(3);
+
+    // ❌ Invalid calls (arity errors)
     try {
       // @ts-expect-error
       curriedAdd(1)("a")(3);
@@ -68,19 +74,4 @@ describe("curry function", () => {
     // @ts-expect-error
     curriedSquare("4");
   });
-
-  //   it("should handle variadic functions", () => {
-  //     const sum = (...numbers: number[]) =>
-  //       numbers.reduce((acc, num) => acc + num, 0);
-  //     const curriedSum = curry(sum);
-
-  //     expect(curriedSum(1, 2, 3, 4, 5)).toBe(15);
-  //     expect(curriedSum(10)(20)(30)).toBe(60);
-
-  //     // ❌ Invalid calls
-  //     // @ts-expect-error
-  //     curriedSum("1", 2);
-  //     // @ts-expect-error
-  //     curriedSum();
-  //   });
 });

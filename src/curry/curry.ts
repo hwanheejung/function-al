@@ -38,20 +38,31 @@ type CurriedFunction<Fn extends AnyFunc> = <
     >
   : ReturnType<Fn>; // false: 모든 인자가 채워졌으므로 결과 반환
 
-//
-// ================== curry function ==================
-const isComplete = (args: any[], expectedLength: number): boolean =>
-  args.length >= expectedLength;
+// ================= curry function =================
+/**
+ *
+ * @function curry
+ *
+ * @description
+ * get a function and return a curried version of it
+ *
+ * @param {function} fn - function to curry
+ *
+ * @returns {function(*): *} the fn passed as a curriable method
+ */
+export function curry<Fn extends AnyFunc>(fn: Fn): CurriedFunction<Fn> {
+  const curried = (...args: PartialTuple<Parameters<Fn>>) => {
+    const isComplete = args.length >= fn.length;
 
-export function curry<Fn extends AnyFunc>(
-  fn: Fn,
-  ...collectedArgs: PartialTuple<Parameters<Fn>>
-): CurriedFunction<Fn> {
-  return (...newArgs) => {
-    const allArgs = [...collectedArgs, ...newArgs];
-
-    return isComplete(allArgs, fn.length)
-      ? fn(...(allArgs as Parameters<Fn>))
-      : curry(fn, ...(allArgs as PartialTuple<Parameters<Fn>>));
+    return isComplete
+      ? fn(...(args as Parameters<Fn>))
+      : (...nextArgs: PartialTuple<Parameters<Fn>>) => {
+          const combinedArgs = [...args, ...nextArgs] as PartialTuple<
+            Parameters<Fn>
+          >;
+          return curried(...combinedArgs);
+        };
   };
+
+  return curried as CurriedFunction<Fn>;
 }
