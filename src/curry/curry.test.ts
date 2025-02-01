@@ -19,7 +19,6 @@ describe("curry function", () => {
     // @ts-expect-error
     curriedAdd();
 
-    // ❌ Invalid calls (arity errors)
     try {
       // @ts-expect-error
       curriedAdd(1)(2)(3)(4);
@@ -73,12 +72,8 @@ describe("curry function", () => {
     // @ts-expect-error
     curriedSquare("4");
 
-    try {
-      // @ts-expect-error
-      curriedSquare(4, 5);
-    } catch (error) {
-      expect(error).toBeInstanceOf(Error);
-    }
+    // @ts-expect-error
+    curriedSquare(4, 5);
   });
 
   it("should handle variadic functions", () => {
@@ -102,8 +97,8 @@ describe("curry function", () => {
       curriedSum(1, 2)(3)(4);
       curriedSum(1)(2, 3)(4);
       curriedSum(1)(2)(3, 4);
-      curriedSum(1, 2, 3)(4);
       curriedSum(1)(2, 3, 4);
+      curriedSum(1, 2, 3)(4);
       curriedSum(1, 2, 3, 4);
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
@@ -122,5 +117,19 @@ describe("curry function", () => {
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
     }
+  });
+
+  it("should work with higher-order functions", () => {
+    // with map
+    const multiply = (a: number, b: number) => a * b;
+    const curriedMultiply = curry(multiply);
+
+    expect([1, 2, 3, 4, 5].map(curriedMultiply(2))).toEqual([2, 4, 6, 8, 10]);
+
+    // with filter
+    const isEven = (num: number) => num % 2 === 0;
+    const curriedIsEven = curry(isEven);
+
+    expect([1, 2, 3, 4, 5].filter(curriedIsEven)).toEqual([2, 4]);
   });
 });

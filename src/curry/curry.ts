@@ -73,11 +73,11 @@ export function curry<Fn extends AnyFunc>(
   arity: number = fn.length
 ): CurriedFunction<Fn> {
   const curried = (...args: ArgsType<Fn>) => {
-    if (args.length > arity) {
+    if (fn.length === 0 && args.length > arity) {
       throw new Error("Too many arguments provided");
     }
 
-    const isComplete = args.length === arity;
+    const isComplete = args.length >= arity;
 
     return isComplete
       ? fn(...(args as Parameters<Fn>))
