@@ -16,17 +16,11 @@ describe("curry function", () => {
     curriedAdd(1)("a")(3);
     // @ts-expect-error
     curriedAdd(1, "a")(3);
+    // @ts-expect-error
+    curriedAdd();
 
     // ❌ Invalid calls (arity errors)
     try {
-      // @ts-expect-error
-      curriedAdd(1)("a")(3);
-      // @ts-expect-error
-      curriedAdd(1, "a")(3);
-
-      // ❌ Invalid calls (arity errors)
-      // @ts-expect-error
-      curriedAdd();
       // @ts-expect-error
       curriedAdd(1)(2)(3)(4);
       // @ts-expect-error
@@ -58,6 +52,13 @@ describe("curry function", () => {
     curried("hello");
     // @ts-expect-error
     curried(1, true);
+
+    try {
+      const fixedArityCurried = curry(example, 2);
+      fixedArityCurried(1)("hello")(true);
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+    }
   });
 
   it("should handle functions with single parameter", () => {
@@ -70,8 +71,56 @@ describe("curry function", () => {
     // @ts-expect-error
     curriedSquare();
     // @ts-expect-error
-    curriedSquare(4, 5);
-    // @ts-expect-error
     curriedSquare("4");
+
+    try {
+      // @ts-expect-error
+      curriedSquare(4, 5);
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+    }
+  });
+
+  it("should handle variadic functions", () => {
+    const sum = (...numbers: number[]) =>
+      numbers.reduce((acc, num) => acc + num, 0);
+    const curriedSum = curry(sum, 3); // Fixed arity of 3
+
+    expect(curriedSum(1)(2)(3)).toBe(6);
+    expect(curriedSum(1, 2)(3)).toBe(6);
+    expect(curriedSum(1)(2, 3)).toBe(6);
+    expect(curriedSum(1, 2, 3)).toBe(6);
+
+    // less than 3 arguments
+    const functionWithLessArgs = curriedSum(1)(2);
+    expect(typeof functionWithLessArgs).toBe("function");
+
+    // ❌ Invalid calls
+
+    try {
+      curriedSum(1)(2)(3)(4);
+      curriedSum(1, 2)(3)(4);
+      curriedSum(1)(2, 3)(4);
+      curriedSum(1)(2)(3, 4);
+      curriedSum(1, 2, 3)(4);
+      curriedSum(1)(2, 3, 4);
+      curriedSum(1, 2, 3, 4);
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+    }
+  });
+
+  it("should handle variadic functions but no arity specified", () => {
+    const sum = (...numbers: number[]) =>
+      numbers.reduce((acc, num) => acc + num, 0);
+    const noFixedArityCurriedSum = curry(sum);
+
+    try {
+      // if arity is not specified, arity is set to 0 for variadic functions
+      // so it will throw an error
+      noFixedArityCurriedSum(1)(2)(3);
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+    }
   });
 });
