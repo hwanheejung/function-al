@@ -1,7 +1,6 @@
-// ================= Utility Types =================
+import { AnyFunc } from "../_internal/types.js";
 
-// Generic function type
-type AnyFunc = (...args: any[]) => any;
+// ================= Utility Types =================
 
 type AtLeastOneParam<Fn extends AnyFunc> = Parameters<Fn> extends [
   infer Head,
