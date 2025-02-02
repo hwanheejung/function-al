@@ -64,10 +64,14 @@ console.log(curriedSum(1, 2, 3)); // Output: 6
 ### 📌 Combining Currying with Higher-Order Functions
 
 ```ts
+import { curry, unary } from "@zoeykr/function-al";
+
 const multiply = (a: number, b: number) => a * b;
 const curriedMultiply = curry(multiply);
 
-console.log([1, 2, 3, 4, 5].map(curriedMultiply(2))); // Output: [2, 4, 6, 8, 10]
+console.log([1, 2, 3, 4, 5].map(unary(curriedMultiply(2)))); // Output: [2, 4, 6, 8, 10]
 ```
 
-- Currying pairs well with higher-order functions like `map`
+- When using curried functions with `higher-order functions` like `map`, extra arguments such as the current index and the original array may be passed unintentionally.
+- To prevent this, wrap the curried function with `unary` to ensure that only the first argument (the current item) is passed to the function.
+- Without `unary`, the curried function might receive more arguments than expected, causing unexpected behavior.
