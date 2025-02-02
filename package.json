@@ -1,9 +1,9 @@
 {
-  "name": "@zoey_utils/function-al",
+  "name": "@zoeykr/function-al",
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A type-safe utility library for functional programming",
   "type": "module",
   "files": [

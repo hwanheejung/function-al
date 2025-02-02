@@ -22,7 +22,7 @@
 ### 📌 Basic Example
 
 ```ts
-import { curry } from "function-al";
+import { curry } from "@zoeykr/function-al";
 
 const add = (a: number, b: number, c: number) => a + b + c;
 const curriedAdd = curry(add);

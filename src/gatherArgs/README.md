@@ -20,7 +20,7 @@
 ### 📌 Basic Example
 
 ```ts
-import { gatherArgs } from "function-al";
+import { gatherArgs } from "@zoeykr/function-al";
 
 const sum = (arr: number[]) => arr.reduce((acc, num) => acc + num, 0);
 const gatheredSum = gatherArgs(sum);

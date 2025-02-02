@@ -21,7 +21,7 @@
 ### 📌 Basic Example
 
 ```ts
-import { partial } from "function-al";
+import { partial } from "@zoeykr/function-al";
 
 const multiply = (a: number, b: number) => a * b;
 const multiplyBy2 = partial(multiply, 2);

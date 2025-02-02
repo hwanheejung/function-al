@@ -20,7 +20,7 @@
 ### 📌 Basic Example
 
 ```ts
-import { spreadArgs } from "function-al";
+import { spreadArgs } from "@zoeykr/function-al";
 
 const sum = (a: number, b: number) => a + b;
 const spreadSum = spreadArgs(sum);
