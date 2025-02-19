@@ -1,4 +1,4 @@
-import pipe from "./pipe.js";
+import { pipe } from "./pipe.js";
 
 describe("pipe function", () => {
   test("should return the same function if only one function is passed", () => {

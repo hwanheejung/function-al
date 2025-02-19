@@ -62,5 +62,3 @@ export function pipe<A, B, C, D, E, F, G, H, I, J>(
 export function pipe(firstFn: Function, ...fns: Function[]): Function {
   return (arg: any) => fns.reduce((acc, fn) => fn(acc), firstFn(arg));
 }
-
-export default pipe;
