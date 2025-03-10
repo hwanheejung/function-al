@@ -6,7 +6,7 @@
 
 ## 📌 Installation
 
-```sh
+```bash
 npm i @zoeykr/function-al
 ```
 
@@ -24,3 +24,16 @@ npm i @zoeykr/function-al
 | [compose](./src/compose/README.md)       | Combines multiple functions into a single function, applying them sequentially from right to left.                                                  |
 | [spreadArgs](./src/spreadArgs/README.md) | Converts an array of arguments into separate function parameters.                                                                                   |
 | [gatherArgs](./src/gatherArgs/README.md) | Transforms multiple arguments into an array                                                                                                         |
+
+<br>
+
+## 🤝 Contributing
+
+Contributions are welcome! 👋  
+If you have ideas for new utilities, find a bug, or want to improve documentation, feel free to check out the [Contributing Guide](./CONTRIBUTING.md).
+
+<br>
+
+## 📜 License
+
+This project is licensed under the `MIT License`.
