@@ -45,14 +45,14 @@ This guide outlines the ways you can help and how to do it effectively.
 
 Please use the following title prefixes when creating issues:
 
-| Type               | Title Format Example                            |
-| ------------------ | ----------------------------------------------- |
-| ✨ Feature Request | `feat: Add support for compose function`        |
-| 🐛 Bug Report      | `bug: curry function returns unexpected result` |
-| 🧪 Test Case       | `test: Add edge case for gatherArgs`            |
-| 📄 Docs Update     | `docs: Fix typo in unary README`                |
-| 🔧 Refactor        | `refactor: Simplify spreadArgs implementation`  |
-| 🧹 Chore / Infra   | `chore: Update npm scripts`                     |
+| Type               | Title Format Example                                 |
+| ------------------ | ---------------------------------------------------- |
+| ✨ Feature Request | `[Feature Request] Add support for compose function` |
+| 🐛 Bug Report      | `[Bug] curry function returns unexpected result`     |
+| 🧪 Test Case       | `[Test] Add edge case for gatherArgs`                |
+| 📄 Docs Update     | `[Docs] Fix typo in unary README`                    |
+| 🔧 Refactor        | `[Refactor] Simplify spreadArgs implementation`      |
+| 🧹 Chore / Infra   | `[Chore] Update npm scripts`                         |
 
 This helps maintain a clean and searchable issue history 🙏
 
