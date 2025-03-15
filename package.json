@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A type-safe utility library for functional programming",
   "type": "module",
   "files": [
@@ -13,8 +13,11 @@
   "module": "dist/function-al.esm.js",
   "types": "dist/function-al.d.ts",
   "exports": {
-    "import": "./dist/function-al.esm.js",
-    "require": "./dist/function-al.cjs.js"
+    ".": {
+      "import": "./dist/function-al.esm.js",
+      "require": "./dist/function-al.cjs.js",
+      "types": "./dist/function-al.d.ts"
+    }
   },
   "scripts": {
     "build": "rollup -c",

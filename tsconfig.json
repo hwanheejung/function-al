@@ -4,7 +4,7 @@
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": false,
-    "declarationDir": "dist/types",
+    "declarationDir": "dist",
     "allowJs": false,
     "strict": true,
     "module": "NodeNext",
