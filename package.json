@@ -15,8 +15,7 @@
   "exports": {
     ".": {
       "import": "./dist/function-al.esm.js",
-      "require": "./dist/function-al.cjs.js",
-      "types": "./dist/function-al.d.ts"
+      "require": "./dist/function-al.cjs.js"
     }
   },
   "scripts": {
