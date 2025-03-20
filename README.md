@@ -7,7 +7,7 @@
 ## 📌 Installation
 
 ```bash
-npm i @zoeykr/function-al
+npm i @zoeykr/function-al@latest
 ```
 
 <br>
