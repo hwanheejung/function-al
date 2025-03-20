@@ -6,3 +6,4 @@ export { curry } from "./curry/curry.js";
 export { unary } from "./unary/unary.js";
 export { pipe } from "./pipe/pipe.js";
 export { compose } from "./compose/compose.js";
+export { noop } from "./noop/noop.js";
