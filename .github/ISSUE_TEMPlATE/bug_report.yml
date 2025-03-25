@@ -1,0 +1,64 @@
+name: "\U0001F41E Bug Report"
+description: Report a bug in function-al
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug in function-al!
+
+        📖 Before submitting, please read the [Contributing Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: Provide a clear description of the bug
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Steps
+      description: Detailed steps to reproduce the bug
+      placeholder: |
+        1. Import function '...'
+        2. Call function with '...'
+        3. Observe error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: input
+    id: library-version
+    attributes:
+      label: Library Version
+      description: Which version of function-al are you using?
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Provide your development environment details
+      placeholder: |
+        - OS: 
+        - Node.js version:
+        - npm/yarn version:

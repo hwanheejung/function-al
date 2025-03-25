@@ -1,0 +1,88 @@
+name: "\U0001F9EA Test Case"
+description: Propose new test cases or improvements for function-al
+labels: ["test"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Test Case Proposal
+
+        📖 Before submitting, please read the [Contributing Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
+
+  - type: input
+    id: function-name
+    attributes:
+      label: Target Function
+      description: Which function are you proposing test cases for?
+      placeholder: "E.g., curry, compose, spreadArgs"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-test-coverage
+    attributes:
+      label: Current Test Coverage
+      description: Describe the existing test cases for this function
+      placeholder:
+        "List the current test scenarios or mention if there are no existing
+        tests"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-test-cases
+    attributes:
+      label: Proposed Test Cases
+      description: Describe the new test cases you want to add
+      placeholder: |
+        1. Edge case: 
+        2. Input validation: 
+        3. Type coverage: 
+        4. Performance test:
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-examples
+    attributes:
+      label: Test Case Examples
+      description: Provide example test code or pseudocode if possible
+      placeholder: |
+        ```typescript
+        test('function name - specific scenario', () => {
+          // Test case details
+        })
+        ```
+
+  - type: checkboxes
+    id: test-types
+    attributes:
+      label: Test Types
+      description: Select the types of tests you're proposing
+      options:
+        - label: Unit Tests
+        - label: Edge Case Tests
+        - label: Input Validation Tests
+        - label: Type Coverage Tests
+        - label: Performance Tests
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why are these test cases important?
+      placeholder:
+        "Explain the value these tests will add to the library's reliability and
+        quality"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribution-checklist
+    attributes:
+      label: Contribution Checklist
+      options:
+        - label: I have read the Contributing Guide
+          required: true
+        - label: These test cases follow the project's testing guidelines
+          required: true

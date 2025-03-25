@@ -1,0 +1,38 @@
+name: "\U0001F4DA Documentation Improvement"
+description: Suggest improvements to function-al's documentation
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve function-al's documentation!
+
+        📖 Before submitting, please read the [Contributing Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      options:
+        - README
+        - API Reference
+        - Examples
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-documentation
+    attributes:
+      label: Current Documentation
+      description: Describe the current state of the documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: Proposed Changes
+      description: Suggest specific improvements or additions
+    validations:
+      required: true
