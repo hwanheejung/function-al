@@ -2,13 +2,6 @@ name: "\U0001F680 Feature Proposal"
 description: Propose a new feature for function-al
 labels: ["enhancement"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to propose a feature for function-al! 
-
-        📖 Before submitting, please read the [Contributing Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
-
   - type: textarea
     id: feature-description
     attributes:
@@ -35,11 +28,16 @@ body:
       description: Describe how you envision this feature being implemented
 
   - type: checkboxes
-    id: contribution-checklist
+    id: checklist
     attributes:
-      label: Contribution Checklist
+      label: Checklist
+      description: Please confirm before submitting
       options:
-        - label: I have read the Contributing Guide
+        - label: I have checked that this issue does not already exist.
           required: true
-        - label: I believe this feature aligns with the library's goals
+        - label:
+            I have read the [Contributing
+            Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
           required: true
+        - label: I am using the latest version of function-al.
+          required: false

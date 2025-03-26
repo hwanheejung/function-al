@@ -2,13 +2,6 @@ name: "\U0001F41E Bug Report"
 description: Report a bug in function-al
 labels: ["bug"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for reporting a bug in function-al!
-
-        📖 Before submitting, please read the [Contributing Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
-
   - type: textarea
     id: bug-description
     attributes:
@@ -62,3 +55,18 @@ body:
         - OS: 
         - Node.js version:
         - npm/yarn version:
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm before submitting
+      options:
+        - label: I have checked that this issue does not already exist.
+          required: true
+        - label:
+            I have read the [Contributing
+            Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
+          required: true
+        - label: I am using the latest version of function-al.
+          required: false
