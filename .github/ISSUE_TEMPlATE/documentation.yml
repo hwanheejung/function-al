@@ -1,0 +1,46 @@
+name: "\U0001F4DA Documentation Improvement"
+description: Suggest improvements to function-al's documentation
+labels: ["documentation"]
+body:
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      options:
+        - README
+        - API Reference
+        - Examples
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-documentation
+    attributes:
+      label: Current Documentation
+      description: Describe the current state of the documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: Proposed Changes
+      description: Suggest specific improvements or additions
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm before submitting
+      options:
+        - label: I have checked that this issue does not already exist.
+          required: true
+        - label:
+            I have read the [Contributing
+            Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
+          required: true
+        - label: I am using the latest version of function-al.
+          required: false

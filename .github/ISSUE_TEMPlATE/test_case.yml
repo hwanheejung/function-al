@@ -1,0 +1,63 @@
+name: "\U0001F9EA Test Case"
+description: Propose new test cases or improvements for function-al
+labels: ["test"]
+body:
+  - type: input
+    id: function-name
+    attributes:
+      label: Target Function
+      description: Which function are you proposing test cases for?
+      placeholder: "E.g., curry, compose, spreadArgs"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-test-coverage
+    attributes:
+      label: Current Test Coverage
+      description: Describe the existing test cases for this function
+      placeholder:
+        "List the current test scenarios or mention if there are no existing
+        tests"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-test-cases
+    attributes:
+      label: Proposed Test Cases
+      description: Describe the new test cases you want to add
+      placeholder: |
+        1. Edge case: 
+        2. Input validation: 
+        3. Type coverage: 
+        4. Performance test:
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-examples
+    attributes:
+      label: Test Case Examples
+      description: Provide example test code or pseudocode if possible
+      placeholder: |
+        ```typescript
+        test('function name - specific scenario', () => {
+          // Test case details
+        })
+        ```
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm before submitting
+      options:
+        - label: I have checked that this issue does not already exist.
+          required: true
+        - label:
+            I have read the [Contributing
+            Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
+          required: true
+        - label: I am using the latest version of function-al.
+          required: false

@@ -1,0 +1,72 @@
+name: "\U0001F9F9 Chore / Infrastructure"
+description:
+  Propose improvements to project infrastructure, build processes, or npm
+  scripts
+labels: ["chore"]
+body:
+  - type: dropdown
+    id: chore-type
+    attributes:
+      label: Type of Chore
+      description: Select the type of infrastructure or chore improvement
+      options:
+        - NPM Scripts
+        - Build Configuration
+        - CI/CD Pipeline
+        - Development Tools
+        - Project Setup
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-situation
+    attributes:
+      label: Current Situation
+      description: Describe the current setup or process that needs improvement
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: Proposed Changes
+      description: Explain the improvements you're suggesting
+      placeholder:
+        "Specific changes to NPM scripts, build processes, or infrastructure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefits
+      description: What improvements will these changes bring?
+      placeholder:
+        "Potential benefits like improved developer experience, faster builds,
+        better testing, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-details
+    attributes:
+      label: Implementation Details
+      description:
+        Provide more technical details about how these changes could be
+        implemented
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm before submitting
+      options:
+        - label: I have checked that this issue does not already exist.
+          required: true
+        - label:
+            I have read the [Contributing
+            Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
+          required: true
+        - label: I am using the latest version of function-al.
+          required: false

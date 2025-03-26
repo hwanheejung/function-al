@@ -1,0 +1,43 @@
+name: "\U0001F680 Feature Proposal"
+description: Propose a new feature for function-al
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description:
+        Provide a clear and concise description of the proposed feature
+      placeholder:
+        "As a developer using function-al, I want [feature] so that [benefit]."
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Explain why this feature would be useful for the library
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe how you envision this feature being implemented
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm before submitting
+      options:
+        - label: I have checked that this issue does not already exist.
+          required: true
+        - label:
+            I have read the [Contributing
+            Guide](https://github.com/hwanheejung/function-al/blob/main/CONTRIBUTING.md).
+          required: true
+        - label: I am using the latest version of function-al.
+          required: false
