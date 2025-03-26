@@ -57,16 +57,6 @@ body:
         implemented
 
   - type: checkboxes
-    id: contribution-checklist
-    attributes:
-      label: Contribution Checklist
-      options:
-        - label: I have read the Contributing Guide
-          required: true
-        - label: These changes align with the project's goals and best practices
-          required: true
-
-  - type: checkboxes
     id: checklist
     attributes:
       label: Checklist
