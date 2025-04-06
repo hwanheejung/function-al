@@ -1,12 +1,25 @@
 # numberGuards
 
-## 💡 About
+## Table of Contents
+
+- [About](#about)
+- [Functions](#functions)
+  - [isNumber](#isnumber)
+  - [isValidNumber](#isvalidnumber)
+  - [isInteger](#isinteger)
+  - [isSafeInteger](#issafeinteger)
+  - [isFiniteNumber](#isfinitenumber)
+  - [isPositive](#ispositive)
+  - [isNegative](#isnegative)
+  - [isZero](#iszero)
+
+## About
 
 The `numberGuards` module provides a suite of type guard functions that perform type-safe validations on numbers in JavaScript/TypeScript. These functions help ensure that values not only belong to the `number` type but also meet specific numeric criteria. They are especially useful in functional programming and in scenarios where strict type checking is required.
 
-## 💡 Functions
+## Functions
 
-### 1. `isNumber`
+### isNumber
 
 **Signature:**
 
@@ -29,7 +42,7 @@ console.log(isNumber("42")); // false
 
 <hr>
 
-### 2. `isValidNumber`
+### isValidNumber
 
 **Signature:**
 
@@ -50,7 +63,7 @@ console.log(isValidNumber("42")); // false
 
 <hr>
 
-### 3. `isInteger`
+### isInteger
 
 **Signature:**
 
@@ -70,7 +83,7 @@ console.log(isInteger(3.14)); // false
 
 <hr>
 
-### 4. `isSafeInteger`
+### isSafeInteger
 
 **Signature:**
 
@@ -91,7 +104,7 @@ console.log(isSafeInteger(3.14)); // false
 
 <hr>
 
-### 5. `isFiniteNumber`
+### isFiniteNumber
 
 **Signature:**
 
@@ -111,7 +124,7 @@ console.log(isFiniteNumber(Infinity)); // false
 
 <hr>
 
-### 6. `isPositive`
+### isPositive
 
 **Signature:**
 
@@ -131,7 +144,7 @@ console.log(isPositive(-1)); // false
 
 <hr>
 
-### 7. `isNegative`
+### isNegative
 
 **Signature:**
 
@@ -151,7 +164,7 @@ console.log(isNegative(1)); // false
 
 <hr>
 
-### 8. `isZero`
+### isZero
 
 **Signature:**
 
